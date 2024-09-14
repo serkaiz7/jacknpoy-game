@@ -1,0 +1,42 @@
+<!-- lounge.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JacknPoy - Lounge</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js"></script>
+</head>
+<body>
+  <div class="lounge-container">
+    <h1>Welcome to the Lounge!</h1>
+    <button id="logout-btn">Logout</button>
+
+    <div class="chat-container">
+      <h2>Chat Room</h2>
+      <div id="chat-box"></div>
+      <input type="text" id="chat-input" placeholder="Type a message...">
+      <button id="send-btn">Send</button>
+    </div>
+
+    <div class="game-rooms">
+      <h2>Game Rooms</h2>
+      <div id="rooms-list"></div>
+      <input type="text" id="room-name" placeholder="Room Name">
+      <button id="create-room-btn">Create Room</button>
+    </div>
+
+    <div class="invite">
+      <h2>Invite to PvP Game</h2>
+      <input type="email" id="invite-email" placeholder="Friend's Email">
+      <button id="invite-btn">Send Invite</button>
+    </div>
+  </div>
+
+  <script src="js/firebase.js"></script>
+  <script src="js/lounge.js"></script>
+</body>
+</html>
