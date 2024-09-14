@@ -1,5 +1,3 @@
-// js/auth.js
-
 // Toggle between Login and Register forms
 const showLogin = document.getElementById('show-login');
 const showRegister = document.getElementById('show-register');
@@ -26,10 +24,11 @@ registerForm.addEventListener('submit', (e) => {
 
   auth.createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
-      // Registration successful
+      console.log("Registration successful:", userCredential.user);
       window.location.href = 'lounge.html';
     })
     .catch((error) => {
+      console.error("Registration error:", error);
       alert(error.message);
     });
 });
@@ -42,10 +41,11 @@ loginForm.addEventListener('submit', (e) => {
 
   auth.signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
-      // Login successful
+      console.log("Login successful:", userCredential.user);
       window.location.href = 'lounge.html';
     })
     .catch((error) => {
+      console.error("Login error:", error);
       alert(error.message);
     });
 });
@@ -53,10 +53,10 @@ loginForm.addEventListener('submit', (e) => {
 // Check Auth State
 auth.onAuthStateChanged((user) => {
   if (user) {
-    // User is signed in
-    // Optionally, redirect to lounge.html if on index.html
+    console.log("User signed in:", user);
+    // Optionally, redirect to lounge.html if user is signed in
     // window.location.href = 'lounge.html';
   } else {
-    // No user is signed in
+    console.log("No user signed in");
   }
 });
